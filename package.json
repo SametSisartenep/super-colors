@@ -1,6 +1,6 @@
 {
   "name": "super-colors",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "x256 implementation for writing colored strings.",
   "main": "index.js",
   "scripts": {
