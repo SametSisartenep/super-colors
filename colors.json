@@ -1,0 +1,23 @@
+[
+  { "name": "black", "color": [ 0, 0, 0 ] },
+  { "name": "white", "color": [ 255, 255, 255 ] },
+  { "name": "red", "color": [ 255, 0, 0 ] },
+  { "name": "green", "color": [ 0, 255, 0 ] },
+  { "name":  "blue", "color": [ 0, 0, 255 ] },
+  { "name": "yellow", "color": [ 255, 255, 0 ] },
+  { "name": "magenta", "color": [ 255, 0, 255 ] },
+  { "name": "cyan", "color": [ 0, 255, 255 ] },
+  { "name": "maroon", "color": [ 128, 0, 0 ] },
+  { "name": "purple", "color": [ 128, 0, 128 ] },
+  { "name": "gray", "color": [ 128, 128, 128 ] },
+  { "name": "orange", "color": [ 255, 165, 0 ] },
+  { "name": "olive", "color": [ 128, 128, 0 ] },
+  { "name": "teal", "color": [ 0, 128, 128 ] },
+  { "name": "turquoise", "color": [ 64, 224, 208 ] },
+  { "name": "sky", "color": [ 135, 206, 235 ] },
+  { "name": "navy", "color": [ 0, 0, 128 ] },
+  { "name": "indigo", "color": [ 75, 0, 130 ] },
+  { "name": "dark-violet", "color": [ 138, 43, 226 ] },
+  { "name": "violet", "color": [ 238, 130, 238 ] },
+  { "name": "pink", "color": [ 255, 192, 203 ] }
+]
