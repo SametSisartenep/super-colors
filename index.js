@@ -9,12 +9,29 @@ function addProperty ( name, callback ) {
   String.prototype.__defineGetter__(name, callback);
 }
 
-function init () {
-  colors.forEach(function ( col ) {
-    addProperty(col.name, function () {
-      return paint(this, col.color);
-    });
+function addColor ( name, value ) {
+  addProperty(name, function () {
+    return paint(this, value);
   });
 }
 
-module.exports = exports = init();
+function removeColor ( name ) {
+  delete String.prototype[name];
+}
+
+function load () {
+  colors.forEach(function ( col ) {
+    addColor(col.name, col.color);
+  });
+
+  return {
+    addColor: function ( name, value ) {
+      addColor(name, value);
+    },
+    removeColor: function ( name ) {
+      removeColor(name);
+    }
+  }
+}
+
+module.exports = exports = load();
