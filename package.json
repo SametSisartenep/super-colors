@@ -1,0 +1,29 @@
+{
+  "name": "super-colors",
+  "version": "0.0.1",
+  "description": "x256 implementation for writing colored strings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SametSisartenep/super-colors.git"
+  },
+  "keywords": [
+    "x256",
+    "colors",
+    "strings",
+    "xterm",
+    "console"
+  ],
+  "author": "Rodrigo González López",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SametSisartenep/super-colors/issues"
+  },
+  "homepage": "https://github.com/SametSisartenep/super-colors",
+  "dependencies": {
+    "x256": "0.0.2"
+  }
+}
