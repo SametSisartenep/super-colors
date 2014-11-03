@@ -23,15 +23,18 @@ function load () {
   colors.forEach(function ( col ) {
     addColor(col.name, col.color);
   });
-
-  return {
-    addColor: function ( name, value ) {
-      addColor(name, value);
-    },
-    removeColor: function ( name ) {
-      removeColor(name);
-    }
-  }
 }
 
-module.exports = exports = load();
+function Colors () {
+  load();
+}
+
+Colors.prototype.addColor = function ( name, value ) {
+  addColor(name, value);
+};
+
+Colors.prototype.removeColor = function ( name ) {
+  removeColor(name);
+};
+
+module.exports = exports = new Colors();
