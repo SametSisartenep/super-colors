@@ -6,17 +6,42 @@ function paint ( text, rgb ) {
 }
 
 function addProperty ( name, callback ) {
-  String.prototype.__defineGetter__(name, callback);
+  if (typeof name === 'string' && typeof callback === 'function')
+  {
+    String.prototype.__defineGetter__(name, callback);
+  }
+  else
+  {
+    var msg = 'expected \'string\' and \'function\', not ' + typeof(name) + ' and ' + typeof(callback);
+    throw new Error(msg);
+  }
 }
 
 function addColor ( name, value ) {
-  addProperty(name, function () {
-    return paint(this, value);
-  });
+  if (typeof name === 'string' && Array.isArray(value))
+  {
+    addProperty(name, function () {
+      return paint(this, value);
+    });
+  }
+  else
+  {
+    var msg = 'expected \'string\' and \'Array\', not ' + typeof(name) + ' and ' +
+     (Array.isArray(value) ? 'array' : 'object');
+    throw new Error(msg);
+  }
 }
 
 function removeColor ( name ) {
-  delete String.prototype[name];
+  if (typeof name === 'string')
+  {
+    delete String.prototype[name];
+  }
+  else
+  {
+    var msg = 'expected \'string\', not ' + typeof(name);
+    throw new Error(msg);
+  }
 }
 
 function load () {
@@ -36,5 +61,7 @@ Colors.prototype.addColor = function ( name, value ) {
 Colors.prototype.removeColor = function ( name ) {
   removeColor(name);
 };
+
+// TODO: Modify colors without modify the 'string' prototype
 
 module.exports = exports = new Colors();

@@ -3,7 +3,7 @@
   { "name": "white", "color": [ 255, 255, 255 ] },
   { "name": "red", "color": [ 255, 0, 0 ] },
   { "name": "green", "color": [ 0, 255, 0 ] },
-  { "name":  "blue", "color": [ 0, 0, 255 ] },
+  { "name": "blue", "color": [ 0, 0, 255 ] },
   { "name": "yellow", "color": [ 255, 255, 0 ] },
   { "name": "magenta", "color": [ 255, 0, 255 ] },
   { "name": "cyan", "color": [ 0, 255, 255 ] },
