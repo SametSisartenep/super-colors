@@ -17,12 +17,17 @@ function addProperty ( name, callback ) {
   }
 }
 
-function addColor ( name, value ) {
+function addColor ( name, value, isFromFile ) {
   if (typeof name === 'string' && Array.isArray(value))
   {
     addProperty(name, function () {
       return paint(this, value);
     });
+
+    if(!isFromFile)
+    {
+      colors.push({ 'name' : name, 'color' : value });
+    }
   }
   else
   {
@@ -36,6 +41,12 @@ function removeColor ( name ) {
   if (typeof name === 'string')
   {
     delete String.prototype[name];
+    colors.forEach(function ( color, i ) {
+      if (color.name === name)
+      {
+        colors.splice(i, 1);
+      }
+    });
   }
   else
   {
@@ -46,7 +57,7 @@ function removeColor ( name ) {
 
 function load () {
   colors.forEach(function ( col ) {
-    addColor(col.name, col.color);
+    addColor(col.name, col.color, true);
   });
 }
 
@@ -60,6 +71,16 @@ Colors.prototype.addColor = function ( name, value ) {
 
 Colors.prototype.removeColor = function ( name ) {
   removeColor(name);
+};
+
+Colors.prototype.getColors = function () {
+  var cols = [];
+
+  colors.forEach(function ( color ) {
+    cols.push(color.name);
+  });
+
+  return cols;
 };
 
 // TODO: Modify colors without modify the 'string' prototype
